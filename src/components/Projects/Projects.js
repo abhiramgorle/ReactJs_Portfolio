@@ -24,7 +24,7 @@ function Projects() {
               imgPath={netflix}
               isBlog={false}
               title="RememberIt"
-              description="A Photo Gallery & Album Viewing web app with a UI similar to Netflix developed to store and view our personal albums, built with react.js, Material-UI, BootStrap5 and Firebase. Have features that allow users to manage their photos and albums and share images, and support reactions to views.."
+              description="A Photo Gallery and Album Viewing web app with a UI similar to Netflix developed to store and view our personal albums, built with react.js, Material-UI, BootStrap5 and Firebase. Have features that allow users to manage their photos and albums and share images, and support reactions to views."
               ghLink=""
               demoLink=""
             />
