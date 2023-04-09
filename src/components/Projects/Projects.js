@@ -58,8 +58,8 @@ function Projects() {
               isBlog={false}
               title="HealthCare IoT Project"
               description="This HealthCare IoT project is for an optimized healthcare monitoring system. To summarize it in a way where the controller collects data through sensors and sends it to the cloud. The data is then processed and examined for remote viewing. The analyzed data will be sent to the guardians, doctors, and family members for viewing."
-              ghLink=""
-              demoLink=""
+              ghLink="https://github.com/abhiramgorle/SmartHealthcare-IoT-Project"
+              demoLink="https://www.tinkercad.com/things/2uoqGiNoDGG-copy-of-smart-health-monitoring-system-mandiproject/editel?sharecode=aS7A3MhqMH9NHqq5BsHDIhsB-xyrxhdzcLJeucD9kfM"
             />
           </Col>
 
