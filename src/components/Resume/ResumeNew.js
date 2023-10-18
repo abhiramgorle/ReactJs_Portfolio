@@ -25,6 +25,7 @@ function ResumeNew() {
             href={pdf}
             target="_blank"
             style={{ maxWidth: "250px" }}
+            rel="noreferrer"
           >
             <AiOutlineDownload />
             &nbsp;Download Resume
