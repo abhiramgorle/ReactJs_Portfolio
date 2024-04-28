@@ -7,6 +7,7 @@ import Projects from "./components/Projects/Projects";
 import Experience from "./components/Experience/Experience";
 import Footer from "./components/Footer";
 import Resume from "./components/Resume/ResumeNew";
+import RedirectUrl from "./components/RedirectUrl.js";
 import {
   BrowserRouter as Router,
   Route,
@@ -42,6 +43,9 @@ function App() {
           <Route path="/resume" element={<Resume />} />
           <Route path="/experience" element={<Experience />} />
           <Route path="*" element={<Navigate to="/"/>} />
+          <Route path="/loveforever" element={<RedirectUrl url="https://golden-cucurucho-ea1082.netlify.app/" />} />
+
+
         </Routes>
         <Footer />
       </div>
