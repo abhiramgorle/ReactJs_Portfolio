@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/ReactJs_Portfolio/static/css/main.4feaa8eb.css",
+    "main.js": "/ReactJs_Portfolio/static/js/main.06e98e93.js",
+    "static/js/787.1ed0c42c.chunk.js": "/ReactJs_Portfolio/static/js/787.1ed0c42c.chunk.js",
+    "static/media/abhiram.jpg": "/ReactJs_Portfolio/static/media/abhiram.f279ce8255b70739f479.jpg",
+    "static/media/gcommunity.png": "/ReactJs_Portfolio/static/media/gcommunity.75358843e3c034984bc4.png",
+    "static/media/abhiram-snow.jpg": "/ReactJs_Portfolio/static/media/abhiram-snow.c38e2a5f31c8b9148940.jpg",
+    "static/media/iot.png": "/ReactJs_Portfolio/static/media/iot.661375676a1491635f51.png",
+    "static/media/blog.png": "/ReactJs_Portfolio/static/media/blog.fb8ab7f271a937d5fc01.png",
+    "static/media/geofence.webp": "/ReactJs_Portfolio/static/media/geofence.9feecfb824969dcade21.webp",
+    "static/media/twitter.png": "/ReactJs_Portfolio/static/media/twitter.cad7815c0b30eb6a37d4.png",
+    "static/media/pdfchatbot.png": "/ReactJs_Portfolio/static/media/pdfchatbot.523f1b961bf2e4579563.png",
+    "static/media/netflix.png": "/ReactJs_Portfolio/static/media/netflix.3653022d9096b4a6f62a.png",
+    "index.html": "/ReactJs_Portfolio/index.html",
+    "main.4feaa8eb.css.map": "/ReactJs_Portfolio/static/css/main.4feaa8eb.css.map",
+    "main.06e98e93.js.map": "/ReactJs_Portfolio/static/js/main.06e98e93.js.map",
+    "787.1ed0c42c.chunk.js.map": "/ReactJs_Portfolio/static/js/787.1ed0c42c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4feaa8eb.css",
+    "static/js/main.06e98e93.js"
+  ]
+}
