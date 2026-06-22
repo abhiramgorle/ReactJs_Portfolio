@@ -1,20 +1,64 @@
-# Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+# Abhiram Gorle — Portfolio
 
-# Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
+Personal portfolio website built with React 17, Three.js, and Framer Motion.
 
-# Build and Test
-TODO: Describe and show how to build your code and run the tests. 
+**Live site:** [abhiramgorle.github.io/ReactJs_Portfolio](https://abhiramgorle.github.io/ReactJs_Portfolio)
 
-# Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
+---
 
-If you want to learn more about creating good readme files then refer the following [guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/git/create-a-readme?view=azure-devops). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+## Features
+
+- **Three.js hero** — interactive wireframe icosahedron with mouse parallax
+- **Custom cat cursor** — cat emoji chases a yarn-ball cursor on desktop
+- **Scroll progress bar** — top-of-page indicator
+- **Single-page scroll** — all sections on one page with smooth anchor navigation
+- **GitHub activity calendar** — live contribution graph
+- **Dark theme** with grain/ambient overlays and accent color `#ff5a36`
+
+---
+
+## Sections
+
+| Section | Description |
+|---|---|
+| Home | Hero with Three.js 3D scene and animated typewriter roles |
+| About | Bio card, tech stack, tool stack, GitHub calendar |
+| Experience | Timeline of work experience |
+| Projects | Project cards grid |
+| Contact | Footer with social links |
+
+---
+
+## Tech Stack
+
+| Category | Libraries |
+|---|---|
+| Framework | React 17, Create React App |
+| 3D / Animation | Three.js, Framer Motion |
+| UI | Bootstrap 5, React Bootstrap, React Icons |
+| Effects | react-tsparticles, react-parallax-tilt, typewriter-effect |
+| Data | react-github-calendar |
+
+---
+
+## Run Locally
+
+```bash
+git clone https://github.com/abhiramgorle/ReactJs_Portfolio.git
+cd ReactJs_Portfolio
+npm install
+npm start        # http://localhost:3000
+```
+
+## Deploy
+
+```bash
+npm run deploy   # builds + pushes to gh-pages branch
+```
+
+---
+
+## Contact
+
+- GitHub: [@abhiramgorle](https://github.com/abhiramgorle)
+- Email: abhiramgorle6@gmail.com

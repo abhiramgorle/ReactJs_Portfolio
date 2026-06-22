@@ -1,92 +1,139 @@
-import React from 'react'
-import {FaAngular,FaReact} from 'react-icons/fa'
-import {SiPlaywright,SiReadthedocs} from 'react-icons/si'
-import 'primereact/resources/themes/mdc-dark-indigo/theme.css';
-import 'primereact/resources/primereact.css';
-import { Timeline } from 'primereact/timeline';
-import { Card } from 'primereact/card';
-import { Container } from 'react-bootstrap';
-import './Experience.css';
-import Particle from '../Particle';
+import React, { useRef, useEffect } from "react";
+import { motion } from "framer-motion";
+import "./Experience.css";
 
-const Experience = () => {
-    const description1 = [
-        "Developed ReactJS dashboards with dynamic data visualization (D3.js integration) that consumed Flask APIs, improving real-timedecision-making efficiency by 35% through WebSocket implementation and memoized component rendering",
-        "Designed and optimized high-throughput Flask REST APIs handling 50k+ transactions/sec, implementing Redis caching andPostgreSQL query tuning to reduce latency by 40%.",
-        "Technologies Used: ReactJS, Python, PostgreSQL, Flask, Postman, Git, Docker, AWS S3"
-      ];
-    const description2 = [
-        "Developed an Interview platform named Interview Buddy where users can sign up and get interview experience from interviewers which will be integrated to a B2B system that uses Angular",
-        "Used Hasura GraphQL for integrations and getting data from the backend.",
-        "Technologies Used: Angular, Hasura, GraphQL, Postman, Git"
-      ];
-    const description3 = [
-        "Led the team for test automation and was involved in writing automation scripts.",
-        "Prepared and executed Automation test scripts using Playwright and Pytest",
-        "Technologies Used: Playwright, Pytest, Lambda Test"
-      ];
-    const description4 = [
-        "Led the Team of 4 Developers in Developing Application Management Software",
-        "Technologies Used: ReactJS, Bootstrap, Supabase, GraphQL"
-      ];
-    const description5 = [
-        "Conducted Automated, functional, regression, and usability testing on mobile and web Applications.",
-        "Conducted regression testing, analyzed results and submitted observations to the development team",
-        "Analyzing test results on database impacts, errors or bugs, and usability"
-      ]
+const rv = (delay = 0) => ({
+  initial: { opacity: 0, y: 32 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, amount: 0.12 },
+  transition: { duration: 0.7, delay, ease: [0.2, 0.7, 0.2, 1] },
+});
 
-    const events1 = [
-        { Title: 'Software Developer - University of Florida', TimeLine: 'October 2024 - Present', icon: FaAngular,description: description1  },
-        { Title: 'Software Developer Intern - AlcoveX Product Studio', TimeLine: 'July 2023 - Nov 2023', icon: FaAngular,description: description2  },
-        { Title: 'QA Automation Intern - AlcoveX Product Studio', TimeLine: 'May 2023 - July 2023', icon:SiPlaywright, description:description3 },
-        { Title: 'Software Developer Intern - AdmitMe International', TimeLine: 'April 2023 - July 2023', icon: FaReact, description:description4  },
-        { Title: 'QA Intern - MeetWorks', TimeLine: 'June 2022 - December 2022',icon: SiReadthedocs, description:description5  }
-    ];
+const EVENTS = [
+  {
+    role: "AI Software Engineer",
+    org: "University of Florida",
+    type: "Full-time",
+    period: "May 2025 — Present",
+    duration: "1 yr 2 mos",
+    tags: ["Python", "LLMs", "AWS", "Machine Learning"],
+  },
+  {
+    role: "Graduate Software Developer",
+    org: "University of Florida College of Education",
+    type: "Part-time",
+    period: "Nov 2024 — Jan 2026",
+    duration: "1 yr 3 mos",
+    location: "Gainesville, FL · On-site",
+    tags: ["Java", "Machine Learning", "React.js"],
+  },
+  {
+    role: "Software Development Engineer",
+    org: "ELITE Solutions",
+    type: "Freelance",
+    period: "Jan 2024 — Jul 2024",
+    duration: "7 mos",
+    location: "Visakhapatnam · Hybrid",
+    tags: ["React.js", "Java", "Node.js", "AWS"],
+  },
+  {
+    role: "Software Engineer",
+    org: "AlcoveX Product Studio",
+    type: "Full-time",
+    period: "May 2022 — May 2024",
+    duration: "2 yrs 1 mo",
+    location: "Visakhapatnam · Hybrid",
+    tags: ["Angular","C#",".NET","Hasura", "GraphQL", "TypeScript"],
+  },
+  {
+    role: "QA Automation Engineer",
+    org: "AlcoveX Product Studio",
+    type: "Seasonal",
+    period: "May 2023 — Jul 2023",
+    duration: "3 mos",
+    location: "Visakhapatnam · On-site",
+    tags: ["Playwright", "Python", "Lambda Test"],
+  },
+];
 
-    
+function Timeline() {
+  const trackRef = useRef(null);
+  const fillRef = useRef(null);
+  const dotRef = useRef(null);
 
-    const customizedMarker = (item) => {
-        const Icon = item.icon
-        return (
-            <span >
-                <Icon size='2em'/>
-            </span>
-        );
+  useEffect(() => {
+    const track = trackRef.current;
+    const fill = fillRef.current;
+    const dot = dotRef.current;
+    if (!track || !fill) return;
+
+    const update = () => {
+      const r = track.getBoundingClientRect();
+      let p = (window.innerHeight * 0.55 - r.top) / r.height;
+      p = Math.max(0, Math.min(1, p));
+      fill.style.height = `${p * 100}%`;
+      if (dot) {
+        dot.style.top = `${p * 100}%`;
+        dot.style.opacity = p > 0.002 && p < 0.999 ? "1" : "0";
+      }
     };
-
-    const customizedContent = (item, index) => {
-        return (
-            <Card
-                title={item.Title}
-                subTitle={item.TimeLine}
-                className="project-card-view"
-                
-            >
-                <ul style={{ textAlign: "left" }}>
-                    {item.description.map((paragraph, index) => (
-                        <li key={index}>{paragraph}</li>
-                    ))}
-                </ul>
-            </Card>
-        );
+    window.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
+    update();
+    return () => {
+      window.removeEventListener("scroll", update);
+      window.removeEventListener("resize", update);
     };
+  }, []);
 
   return (
-    <section>
-        <Container fluid className='about-section'>
-            <Particle  />
-            <Container>
-                <h1 className="project-heading">
-                My Industrial <strong className="purple">Experience </strong>
-                </h1>
-                <div >
-                    <Timeline value={events1} align="alternate" className="customized-timeline" marker={customizedMarker} content={customizedContent} />
-                </div>
-            </Container>
+    <div style={{ position: "relative" }}>
+      <div id="exp-line" ref={trackRef}>
+        <div id="exp-line-fill" ref={fillRef} />
+        <div id="exp-line-dot" ref={dotRef} />
+      </div>
 
-        </Container>
-    </section>
-  )
+      <div className="exp-list">
+        {EVENTS.map((x, i) => (
+          <motion.div
+            key={i}
+            className={`exp-entry ${i % 2 === 0 ? "side-left" : "side-right"}`}
+            {...rv(i * 0.05)}
+          >
+            <span className="exp-bullet" />
+            <div className="exp-card">
+              <h3 className="exp-role">{x.role}</h3>
+              <div className="exp-org-line">
+                <span className="exp-org">{x.org}</span>
+                <span className="exp-type">{x.type}</span>
+              </div>
+              <div className="exp-meta">{x.period} · {x.duration}</div>
+              {x.location && <div className="exp-loc">📍 {x.location}</div>}
+              <div className="exp-tags">
+                {x.tags.map((t) => (
+                  <span key={t} className="exp-tag">{t}</span>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+    </div>
+  );
 }
 
-export default Experience
+function Experience() {
+  return (
+    <section id="experience" className="port-section port-section--wide">
+      <motion.div className="section-label" {...rv()}>
+        04 — Journey
+      </motion.div>
+      <motion.h2 className="section-heading" style={{ marginBottom: "56px" }} {...rv()}>
+        My industrial <span className="accent">experience</span>
+      </motion.h2>
+      <Timeline />
+    </section>
+  );
+}
+
+export default Experience;

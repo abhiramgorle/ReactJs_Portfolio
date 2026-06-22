@@ -1,0 +1,15 @@
+{
+  "enabledPlugins": {
+    "landing@claude-code-skills": true,
+    "extended-3d-scroll@claude-design-skillstack": true,
+    "core-3d-animation@claude-design-skillstack": true,
+    "animation-components@claude-design-skillstack": true,
+    "web3d-integration-patterns@claude-design-skillstack": true,
+    "threejs-webgl@claude-design-skillstack": true,
+    "scroll-reveal-libraries@claude-design-skillstack": true,
+    "react-three-fiber@claude-design-skillstack": true,
+    "motion-framer@claude-design-skillstack": true,
+    "modern-web-design@claude-design-skillstack": true,
+    "lottie-animations@claude-design-skillstack": true
+  }
+}
